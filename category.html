@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits and Vegetables</title>
+    <link rel="shortcut icon" href="./v.png" type="image/svg+xml">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+ 
+     <!-- Responsive CSS -->
+     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+
+</head>
+<body>
+
+    <section class="navigation"> <div class="nav-container"> <div class="brand">  </div> <nav> <div class="nav-mobile"><a id="navbar-toggle" ><span></span></a></div> <ul class="nav-list"> <li> <a href="index.php">Home</a> </li> <li >  <a href="fruits.php">Fruits</a> </li> <li> <a href="Vegetables.php">Vegetables</a> </li>  </ul> </nav> </div> </section>
+<!-- <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="index.php">Home</a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="fruits.php">Fruits</a>
+          </li>
+         
+          <li >
+            <a href="Vegetables.php">Vegetables</a>
+  </li> -->
+          <!-- <li>
+            <a href="#!">Status</a>
+          </li>
+          <li>
+            <a href="registration.html">Register</a>
+          </li>
+          <li id="login">
+            <a href="login.html">Login</a>
+          </li>
+          <li id="logout">
+            <a href="logout.php">Logout</a>
+          </li> -->
+        <!-- </ul>
+      </nav>
+    </div>
+  </section> -->
+  <div class="latest-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-all text-center">
+                    <h1>Latest Blog</h1>
+                    <p>Keep up with latest and fresh news</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="img/blog-img.jpg" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>How to cook cabbages</h3>
+                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="img/blog-img-01.jpg" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>5 Benefits of carrots</h3>
+                            <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+                <div class="blog-box">
+                    <div class="blog-img">
+                        <img class="img-fluid" src="img/blog-img-02.jpg" alt="" />
+                    </div>
+                    <div class="blog-content">
+                        <div class="title-blog">
+                            <h3>Top 10 Foods you must try</h3>
+                            <p> Malawi offers a wide range of foods that are delicious and nutritious. Nulla ut urna egestas, porta libero id, suscipit. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
+                        </div>
+                        <ul class="option-blog">
+                            <li><a href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                            <li><a href="#"><i class="far fa-comments"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Blog  -->
+<div class="footer-copyright">
+    <hr>
+
+<p class="footer-company">All Rights Reserved. &copy; 2025 <a href="categories.html">Green Garden</a> 
+
+</span>
+</p>
+</div>
+
+
+
+<script >
+    document.addEventListener('DOMContentLoaded', function () {
+      var navbarToggle = document.getElementById('navbar-toggle');
+      var navList = document.querySelector('.nav-list');
+
+      if (navbarToggle) {
+          navbarToggle.addEventListener('click', function () {
+              navList.classList.toggle('active');
+              navbarToggle.classList.toggle('active');
+          });
+      }
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

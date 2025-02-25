@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+      <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./v.png" type="image/svg+xml">
+
+    <link rel="stylesheet" href="css/regi.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+ 
+     <!-- Responsive CSS -->
+     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+   
+   <!-- From Uiverse.io by ammarsaa --> 
+   <div class="container mt-5 d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form class="form" action="user.php" method="post" id="registration-form">
+        <p class="title">Register</p>
+        <p class="message">Signup now and get full access to our website.</p>
+        <div class="flex">
+            <label>
+                <input class="input" type="text" name="firstname" placeholder="" required>
+                <span>Firstname</span>
+            </label>
+
+            <label>
+                <input class="input" type="text" name="lastname" placeholder="" required>
+                <span>Lastname</span>
+            </label>
+        </div>
+
+        <label>
+            <input class="input" type="text" name="address" placeholder="" required>
+            <span>Address</span>
+        </label>
+        
+        <label>
+            <input class="input" type="email" name="email" placeholder="" required>
+            <span>Email</span>
+        </label>
+
+        <label>
+            <input class="input" type="password" name="password" placeholder="" required>
+            <span>Password</span>
+        </label>
+
+        <label>
+            <input class="input" type="password" name="confirm_password" placeholder="" required>
+            <span>Confirm password</span>
+        </label>
+
+        <button class="submit" type="submit">Submit</button>
+    </form>
+</div>
+
+
+    <!-- From Uiverse.io by mobinkakei -->
+    <div class="wrapper" id="loading-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent immediate form submission
+            const form = e.target;
+            const loadingAnimation = document.getElementById('loading-animation');
+
+            // Hide form and show loading animation
+            form.style.display = 'none';
+            loadingAnimation.style.display = 'block';
+
+            // Submit the form after animation
+            setTimeout(() => {
+                const tempForm = document.createElement('form');
+                tempForm.method = 'POST';
+                tempForm.action = form.action;
+
+                Array.from(form.elements).forEach(element => {
+                    if (element.name) {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = element.name;
+                        input.value = element.value;
+                        tempForm.appendChild(input);
+                    }
+                });
+
+                document.body.appendChild(tempForm);
+                tempForm.submit();
+            }, 3000); // Duration of the loading animation
+        });
+    </script>
+</body>
+</html>

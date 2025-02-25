@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/regi.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./v.png" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">
+ 
+     <!-- Responsive CSS -->
+     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <div class="container mt-5"  id="login-form">
+        <form class="form" action="logout.php" method="post" id="loginform">
+            <p class="title">Logout</p>
+          
+
+            <label>
+                <input class="input" type="email" name="email"  required>
+                <span>Email</span>
+            </label>
+
+            <label>
+                <input class="input" type="password" name="password"  required>
+                <span>Password</span>
+            </label>
+
+            <button class="submit" type="submit">Logout</button>
+        </form>
+    </div>
+
+    <!-- Loading animation -->
+    <div class="wrapper" id="loading-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+        <div class="shadow"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent immediate form submission
+            const form = e.target;
+            const loadingAnimation = document.getElementById('loading-animation');
+
+            // Hide form and show loading animation
+            form.style.display = 'none';
+            loadingAnimation.style.display = 'block';
+
+            // Submit the form after animation
+            setTimeout(() => {
+                form.submit();
+            }, 3000); // Duration of the loading animation
+        });
+       
+        $(document).ready(function() {
+            $('#login-logout a').click(function(e) {
+                e.preventDefault();
+                if ($(this).text() === "Login") {
+                    $('#login-form').slideToggle();
+                } else {
+                    $.post('logout.php', function(response) {
+                        alert(response);
+                        $('#login-logout a').text("Login").attr("href", "login.html");
+                        location.reload();
+                    });
+                }
+            });
+
+            $('#loginForm').submit(function(e) {
+                e.preventDefault();
+                $.post('login.php', $(this).serialize(), function(response) {
+                    alert(response);
+                    if (response.includes("successful")) {
+                        $('#login-logout a').text("Logout").attr("href", "#");
+                        $('#login-form').slideToggle();
+                        location.reload();
+                    }
+                });
+            });
+        });
+    
+    </script>
+</body>
+</html>
